@@ -14,42 +14,7 @@ revealItems.forEach((item) => {
   revealObserver.observe(item);
 });
 
-const coverUpload = document.querySelector('#cover-upload');
-const heroImage = document.querySelector('.hero-image');
-const videoUpload = document.querySelector('#video-upload');
-const videoPreview = document.querySelector('#video-preview');
-const videoPlaceholder = document.querySelector('.video-placeholder');
-const videoLinkForm = document.querySelector('#video-link-form');
-const videoLinkInput = document.querySelector('#video-link');
 const videoLinks = document.querySelector('#video-links');
-
-coverUpload.addEventListener('change', () => {
-  const [selectedImage] = coverUpload.files;
-  if (!selectedImage) return;
-
-  heroImage.style.backgroundImage = `url("${URL.createObjectURL(selectedImage)}")`;
-});
-
-videoUpload.addEventListener('change', () => {
-  const selectedVideos = [...videoUpload.files];
-  if (!selectedVideos.length) return;
-
-  selectedVideos.forEach((selectedVideo) => {
-    addVideoCard(URL.createObjectURL(selectedVideo), selectedVideo.name);
-  });
-
-  videoPlaceholder.hidden = true;
-  videoPreview.hidden = true;
-});
-
-function addVideoCard(videoUrl, label) {
-  const card = document.createElement('div');
-  card.className = 'video-card';
-  card.innerHTML = `<div class="video-cover"><span>VIOLIN<br />LIVE</span></div><video src="${videoUrl}" playsinline></video><button class="remove-video" type="button" aria-label="Удалить видео">×</button>`;
-  setupVideoPlayer(card);
-  card.querySelector('.remove-video').addEventListener('click', () => card.remove());
-  videoLinks.append(card);
-}
 
 function setupVideoPlayer(card) {
   const video = card.querySelector('video');
@@ -83,15 +48,3 @@ document.querySelectorAll('.spec-card.copper').forEach((card) => {
   card.addEventListener('touchstart', showPhoto, { passive: true });
 });
 
-videoLinkForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const videoUrl = videoLinkInput.value.trim();
-  if (!videoUrl) return;
-
-  const card = document.createElement('div');
-  card.className = 'video-card';
-  card.innerHTML = `<a href="${videoUrl}" target="_blank" rel="noreferrer">Смотреть видео ↗</a><button class="remove-video" type="button" aria-label="Удалить ссылку">×</button>`;
-  card.querySelector('.remove-video').addEventListener('click', () => card.remove());
-  videoLinks.append(card);
-  videoLinkInput.value = '';
-});
