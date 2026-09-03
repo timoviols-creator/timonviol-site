@@ -29,7 +29,7 @@ function setupVideoPlayer(card) {
   const progress = controls.querySelector('.progress');
   playButton.addEventListener('click', () => (video.paused ? video.play() : video.pause()));
   video.addEventListener('click', () => (video.paused ? video.play() : video.pause()));
-  video.addEventListener('play', () => { card.classList.add('is-playing'); playButton.textContent = 'Ⅱ'; });
+  video.addEventListener('play', () => { document.querySelectorAll('.video-card video').forEach((otherVideo) => { if (otherVideo !== video) otherVideo.pause(); }); card.classList.add('is-playing'); playButton.textContent = 'Ⅱ'; });
   video.addEventListener('pause', () => { card.classList.remove('is-playing'); playButton.textContent = '▶'; });
   video.addEventListener('timeupdate', () => { progress.value = video.duration ? (video.currentTime / video.duration) * 100 : 0; });
   progress.addEventListener('input', () => { if (video.duration) video.currentTime = (progress.value / 100) * video.duration; });
