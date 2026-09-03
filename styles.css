@@ -88,6 +88,12 @@ footer { padding: 90px 7vw 42px; background: var(--ink); color: var(--paper); }.
 @media (max-width: 700px) { .contact-list-heading { display: block; margin-top: 58px; padding-top: 20px; }.contact-list-heading h3 { margin-top: 28px; font-size: 54px; } }
 .spec-card.copper:hover .card-photo, .spec-card.copper.is-hovering .card-photo, .spec-card.copper:focus-within .card-photo { opacity: .42; transform: scale(1.04); }
 .video-card .play-button { opacity: .9; }
+
+/* Final mobile image rules */
+@media (max-width: 700px) {
+  .gallery-grid { display: flex !important; flex-direction: column !important; gap: 12px; }
+  .gallery-grid img { width: 100% !important; height: auto !important; min-height: 0 !important; aspect-ratio: auto !important; object-fit: contain !important; border-radius: 12px !important; }
+}
 .video-card.is-playing .play-button { opacity: .9; }
 .cover-picker { position: absolute; right: 7vw; bottom: calc(7vh + 72px); z-index: 3; cursor: pointer; border: 1px solid rgba(255,255,255,.7); padding: 11px 14px; color: #fff; font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; transition: background .25s, color .25s; }.cover-picker:hover { background: #fff; color: var(--ink); }
 .video-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }.video-card { position: relative; min-width: 0; }.video-card video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #151515; border-radius: 10px; }.video-card a { display: block; margin-top: 7px; }.video-card .remove-video { position: absolute; top: 8px; right: 8px; z-index: 2; padding: 5px 8px; border: 0; background: rgba(0,0,0,.72); color: #fff; font: 11px var(--mono); cursor: pointer; }
