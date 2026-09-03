@@ -66,6 +66,12 @@ footer { padding: 90px 7vw 42px; background: var(--ink); color: var(--paper); }.
 .spec-card.copper:hover::before, .spec-card.copper:focus-within::before { opacity: .42 !important; transform: scale(1.04); }
 .spec-card.copper.is-hovering::before { opacity: .42 !important; transform: scale(1.04); }
 .specs .spec-card.copper.is-hovering::before { opacity: .42 !important; transform: scale(1.04); }
+.external-arrow { display: inline-block; width: 10px; height: 10px; margin-left: 8px; border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor; transform: translateY(2px); }
+.footer-mail .external-arrow { color: var(--copper); }
+.contact-links a { grid-template-columns: 45px 1fr; }
+.contact-links a > span:last-child, .top-contact span { font-family: var(--mono); font-variant-emoji: text; }
+@media (max-width: 700px) { html, body { overflow-x: hidden; }.experience-heading h2, .contact-heading h2 { overflow-wrap: anywhere; word-break: normal; }.contact-heading h2 { font-size: 60px; }.experience-heading h2 { font-size: 46px; }.experience-row strong { overflow-wrap: anywhere; } }
+@media (max-width: 700px) { .gallery-grid { display: flex; flex-direction: column; gap: 12px; }.gallery-grid img, .gallery-grid .gallery-tall, .gallery-grid .gallery-wide { width: 100%; height: auto; max-height: none; aspect-ratio: auto; object-fit: contain; border-radius: 12px; }.gallery-grid img { align-self: stretch; } }
 .spec-card.copper .card-photo { position: absolute !important; inset: 0; z-index: 0 !important; background: url('8EsKkkFWy-n2t0ubHOa4XSIXXEYLh7tTcrj0kzHq8jPbrxiD8AqB.jpg') center / cover; filter: grayscale(1) contrast(1.25) brightness(.72); opacity: .06; transition: opacity .45s, transform .7s; pointer-events: none; }
 .spec-card.copper .card-photo { opacity: .48 !important; mix-blend-mode: normal; filter: grayscale(1) contrast(1.35) brightness(.78); }
 .spec-card.copper:hover .card-photo, .spec-card.copper.is-hovering .card-photo, .spec-card.copper:focus-within .card-photo { opacity: .68 !important; }
