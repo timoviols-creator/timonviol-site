@@ -120,3 +120,4 @@ footer { padding: 90px 7vw 42px; background: var(--ink); color: var(--paper); }.
 .spec-card h3 { max-width: 540px; font-size: clamp(38px, 4.1vw, 62px); }
 .spec-card ul { max-width: 620px; }
 @media (max-width: 700px) { .specs { max-width: none; gap: 0; }.spec-card { min-height: 455px; padding: 31px 8vw 38px; }.card-number { right: 8vw; top: 25px; font-size: 64px; }.card-label { left: 8vw; top: 35px; }.card-icon { margin-top: 70px; }.spec-card h3 { max-width: 100%; font-size: 32px; } }
+.evcInformer { margin-top: 28px; opacity: .85; transition: opacity .25s; }.evcInformer:hover { opacity: 1; }
